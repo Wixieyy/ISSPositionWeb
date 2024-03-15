@@ -62,7 +62,10 @@ body {
     border: 5px solid darkgray;
     border-radius: 30px;
     animation-name: fadein;
-    animation-duration: 1000ms;
+    animation-duration: 900ms;
+}
+.fade-out {
+    animation: fadeout 1s ease forwards;
 }
 .centerbox img {
     width: 175px;
@@ -73,23 +76,32 @@ p {
     color: white;
 }
 #github-link,
-#proceed-link {
+#github-link:active,
+#github-link:visited {
     text-decoration: none;
     color: blue;
 }
-#proceed-link {
-    font-size: 1.5em;
-}
-
-#github-link:active,
+#proceed-link,
 #proceed-link:active,
-#github-link:visited,
 #proceed-link:visited {
     text-decoration: none;
-    color: blue;
+    color: black;
+    font-size: 1.5em;
 }
+#proceed-button {
+    width: 100px;
+    height: 35px;
+    background-color: whitesmoke;
+    border-radius: 7px;
+
+}
+
 
 @keyframes fadein {
     from { opacity: 0; transform: translateX(-200px) }
     to { opacity: 1; }
+}
+@keyframes fadeout {
+    from { opacity: 1;  }
+    to { opacity: 0; transform: translateX(200px)}
 }
