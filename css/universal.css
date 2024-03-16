@@ -1,0 +1,8 @@
+body {
+    background-image: url("/img/ISS_spaceBlurred.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: Merriweather, sans-serif;
+}

@@ -2,32 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ISS Locator</title>
-    <link rel="icon" type="image/jpg"href="img/ISS_emblem.png">
+    <title>ISS Tracking</title>
+    <link rel="icon" type="image/jpg" href="img/ISS_insignia.png">
+    <link rel="stylesheet" href="css/universal.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
 <header>
     <div class="navbar">
         <div class="logo">
-            <img id="logo" src="img/ISS_emblem.png">
-            <h2 id="headertext">ISS Locator</h2>
+            <a id="linklogo" href="#">
+            <img id="logo" src="img/ISS_emblem.png" alt="ISS patch">
+            </a>
+            <h2 id="headertext">ISS Tracking</h2>
         </div>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">API Docs</a></li>
-            <li><a href="#">Source Code</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="#">About</a></li>
+            <li><a href="http://open-notify.org/" target="_blank">API Docs</a> </li>
+            <li><a href="https://github.com/Wixieyy/ISSPositionWeb" target="_blank">Source Code</a></li>
         </ul>
     </div>
 </header>
 
 <main>
-
+    <div class="center-box">
+        <div class="info-box">
+            <h1 id="info-title">Current Position</h1><br>
+            <div id="position-info">
+                <h2>Latitude</h2>
+                <h2>Longitude</h2>
+                <h2>Altitude</h2>
+                <h2>Orbital speed</h2>
+                <h2>Orbital period</h2>
+            </div>
+            <div id="position-result">
+                <h2>Latitude</h2>
+                <h2>Longitude</h2>
+                <h2>Altitude</h2>
+                <h2>Orbital speed</h2>
+                <h2>Orbital period</h2>
+            </div>
+        </div>
+        <div class="map-box">
+            <p id="map-title">Map</p>
+        </div>
+    </div>
 </main>
 
 <footer>

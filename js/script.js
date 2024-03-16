@@ -3,7 +3,7 @@ document.getElementById("proceed-link").addEventListener("click", function(event
     event.preventDefault();
 
     // Add fade-out class to trigger the animation
-    document.querySelector('.centerbox').classList.add('fade-out');
+    document.querySelector('.center-box').classList.add('fade-out');
 
     // Delay before navigating to the URL
     setTimeout(function() {
@@ -12,5 +12,5 @@ document.getElementById("proceed-link").addEventListener("click", function(event
 
         // Navigate to the URL
         window.location.href = url;
-    }, 1000); // Adjust the delay time (in milliseconds) to match the duration of the animation
+    }, 250); // Adjust the delay time (in milliseconds) to match the duration of the animation
 });

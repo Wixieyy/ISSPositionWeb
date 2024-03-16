@@ -48,24 +48,37 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-family: Merriweather, sans-serif;
-    background-color: indianred;
+    background-color: rgba(246, 246, 246, 0%);
+    max-width: 220px;
+    height: 60px;
+    padding: 0 20px;
 }
 .logo #logo {
-    padding: 0 15px;
 }
-.navbar { /*remove page border padding*/
-
+#headertext {
+    text-align: center;
+}
+#linklogo {
+    background-color: rgba(246, 246, 246, 0%);
+    padding: 5px;
+}
+.navbar {
     display: flex;
+    margin: 20px auto auto;
     align-items: center;
     justify-content: space-between;
     height: 80px;
-    padding-right: 20px;
     font-family: Merriweather, sans-serif;
-    background-color: cornflowerblue;
+    background-color: rgba(246, 246, 246, 85%);
+    max-width: 97%;
+    border-radius: 20px;
+    padding-left: 5px;
+    padding-right: 20px;
+    /*animation-name: fadein;*/
+    /*animation-duration: 250ms;*/
 }
 .navbar h2 {
-    color: blue;
+    color: #2f2f2f;
 }
 .navbar ul {
     display: flex;
@@ -75,6 +88,71 @@
 }
 .navbar ul li a {
     text-decoration: none;
-    color: black;
+    color: #2f2f2f;
     padding: 20px;
+    font-weight: bold;
+}
+.navbar ul button {
+    width: 150px;
+    height: 50px;
+}
+
+
+.center-box {
+    display: flex;
+    margin: 20px auto auto;
+    align-items: center;
+    justify-content: space-between;
+    height: 850px;
+    font-family: Merriweather, sans-serif;
+    background-color: rgba(246, 246, 246, 100%);
+    max-width: 97%;
+    border-radius: 20px;
+    padding: 0 10px;
+    /*animation-name: fadein;*/
+    /*animation-duration: 500ms;*/
+}
+.info-box {
+    background-color: mediumpurple;
+    width: 27.5%;
+    height: 98%;
+    border-radius: 20px;
+}
+#info-title {
+    text-align: center;
+    font-weight: bold;
+    margin: 30px 0 0 0;
+}
+#position-info {
+    margin: 0 0 0 20px;
+    background-color: red;
+    width: 170px;
+    display: inline-block;
+}
+#position-result {
+    margin: 0 0 0 20px;
+    background-color: red;
+    width: 170px;
+    display: inline-block;
+}
+#position-info h2,#position-result h2 {
+    font-weight: lighter;
+}
+.map-box {
+    background-color: tomato;
+    width: 71.5%;
+    height: 98%;
+    border-radius: 20px;
+}
+#map-title {
+
+}
+
+@keyframes fadein {
+    from { opacity: 0; transform: translateX(-200px) }
+    to { opacity: 1; }
+}
+@keyframes fadeout {
+    from { opacity: 1;  }
+    to { opacity: 0; transform: translateX(200px)}
 }
