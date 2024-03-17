@@ -2,28 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ISS Tracking</title>
+    <title>ISS Tracking | Home</title>
     <link rel="icon" type="image/jpg" href="img/ISS_insignia.png">
     <link rel="stylesheet" href="css/universal.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-    <script src="js/script.js" defer></script>
+    <script src="js/home.js" defer></script>
 </head>
 
 <body>
 <header>
     <div class="navbar">
         <div class="logo">
-            <a id="linklogo" href="#">
+            <a id="linklogo" href="home.html">
             <img id="logo" src="img/ISS_emblem.png" alt="ISS patch">
             </a>
             <h2 id="headertext">ISS Tracking</h2>
         </div>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="home.html">Home</a></li>
+            <li><a id="aboutuslink" href="about.html">About</a></li>
             <li><a href="http://open-notify.org/" target="_blank">API Docs</a> </li>
             <li><a href="https://github.com/Wixieyy/ISSPositionWeb" target="_blank">Source Code</a></li>
         </ul>
@@ -34,7 +34,7 @@
     <div class="center-box">
         <div class="info-box">
             <h1 id="info-title">Current Position</h1><br>
-            <div id="position-info">
+            <div id="position-title">
                 <h2>Latitude</h2>
                 <h2>Longitude</h2>
                 <h2>Altitude</h2>
@@ -42,11 +42,11 @@
                 <h2>Orbital period</h2>
             </div>
             <div id="position-result">
-                <h2>Latitude</h2>
-                <h2>Longitude</h2>
-                <h2>Altitude</h2>
-                <h2>Orbital speed</h2>
-                <h2>Orbital period</h2>
+                <h2>31.58° South</h2>
+                <h2>155.53° East</h2>
+                <h2>~408 km</h2>
+                <h2>~7376 m/s</h2>
+                <h2>~90 min</h2>
             </div>
         </div>
         <div class="map-box">
