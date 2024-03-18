@@ -1,102 +1,7 @@
-.merriweather-light {
-    font-family: "Merriweather", serif;
-    font-weight: 300;
-    font-style: normal;
-}
-.merriweather-regular {
-    font-family: "Merriweather", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-.merriweather-bold {
-    font-family: "Merriweather", serif;
-    font-weight: 700;
-    font-style: normal;
-}
-.merriweather-black {
-    font-family: "Merriweather", serif;
-    font-weight: 900;
-    font-style: normal;
-}
-.merriweather-light-italic {
-    font-family: "Merriweather", serif;
-    font-weight: 300;
-    font-style: italic;
-}
-.merriweather-regular-italic {
-    font-family: "Merriweather", serif;
-    font-weight: 400;
-    font-style: italic;
-}
-.merriweather-bold-italic {
-    font-family: "Merriweather", serif;
-    font-weight: 700;
-    font-style: italic;
-}
-.merriweather-black-italic {
-    font-family: "Merriweather", serif;
-    font-weight: 900;
-    font-style: italic;
-}
-
-
-
-#logo {
-    height: 50px;
-}
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: rgba(246, 246, 246, 0%);
-    max-width: 220px;
-    height: 60px;
-    padding: 0 20px;
-}
-.logo #logo {
-}
-#headertext {
-    text-align: center;
-}
-#linklogo {
-    background-color: rgba(246, 246, 246, 0%);
-    padding: 5px;
-}
 .navbar {
-    display: flex;
-    margin: 20px auto auto;
-    align-items: center;
-    justify-content: space-between;
-    height: 80px;
-    font-family: Merriweather, sans-serif;
-    background-color: rgba(246, 246, 246, 85%);
-    max-width: 97%;
-    border-radius: 20px;
-    padding-left: 5px;
-    padding-right: 20px;
     animation-name: fadein;
-    animation-duration: 250ms;
+    animation-duration: 500ms;
 }
-.navbar h2 {
-    color: #2f2f2f;
-}
-.navbar ul {
-    display: flex;
-}
-.navbar ul li {
-    list-style: none;
-}
-.navbar ul li a {
-    text-decoration: none;
-    color: #2f2f2f;
-    padding: 20px;
-    font-weight: bold;
-}
-.navbar ul button {
-    width: 150px;
-    height: 50px;
-}
-
 
 .center-box {
     display: flex;
@@ -113,7 +18,7 @@
     animation-duration: 600ms;
 }
 .info-box {
-    background-color: rgba(35, 35, 35, 0.1);;
+    background-color: rgba(35, 35, 35, 0.1);
     /*border: 3px solid #2f2f2f;*/
     width: 27.5%;
     height: 98%;
@@ -144,16 +49,28 @@
     font-weight: lighter;
     text-align: left;
 }
+
 .map-box {
-    background-color: tomato;
+    background-color: rgba(35, 35, 35, 0.1);
     width: 71.5%;
     height: 98%;
     border-radius: 20px;
+    text-align: center;
     /*border: 3px solid #2f2f2f;*/
-
 }
 #map-title {
-
+    text-align: center;
+    font-weight: bold;
+    margin: 30px 0 0 0;
+}
+.map-image {
+    text-align: center;
+    margin-top: 20px;
+}
+#earth-map {
+    max-width: 1300px;
+    border: 5px solid gray;
+    border-radius: 10px;
 }
 
 .fade-out {
