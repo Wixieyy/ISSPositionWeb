@@ -1,3 +1,6 @@
+* {
+    user-select: none;
+}
 .center-box {
     background-color: rgb(246, 246, 246);
     padding: 20px;

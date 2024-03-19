@@ -39,7 +39,9 @@
     font-style: italic;
 }
 
-
+* {
+    user-select: none;
+}
 body {
     background-image: url("/img/ISS_spaceBlurred.jpg");
     background-repeat: no-repeat;
