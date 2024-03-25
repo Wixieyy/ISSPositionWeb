@@ -1,9 +1,10 @@
 * {
     user-select: none;
+    -webkit-user-drag: none;
 }
 .center-box {
     background-color: rgb(246, 246, 246);
-    padding: 20px;
+    padding: 20px 20px 0 0;
     text-align: center;
     max-width: 1000px;
     border: 5px solid darkgray;
@@ -11,6 +12,13 @@
     animation-name: fadein;
     animation-duration: 500ms;
     margin: 100px auto auto auto;
+    display: flow-root;
+}
+#aboutpic {
+    float: left;
+    height: 500px;
+    padding-right: 20px;
+    user-select: none;
 }
 .center-box h1 {
     font-size: 40px;
@@ -31,6 +39,7 @@
 }
 .social-icons i {
     margin: 0 10px 10px 10px;
+
 }
 .fa-brands.fa-discord.fa-3x {
     color: #7289da;

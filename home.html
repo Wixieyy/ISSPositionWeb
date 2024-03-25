@@ -10,22 +10,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <script src="js/home.js" defer></script>
+    <script src="js/universal.js" defer></script>
 </head>
 
 <body>
 <header>
     <div class="navbar">
         <div class="logo">
-            <a id="linklogo" href="home.html">
+            <a id="linklogo" href="#">
             <img id="logo" src="img/ISS_emblem.png" alt="ISS patch">
             </a>
             <h2 id="headertext">ISS Tracking</h2>
         </div>
         <ul>
-            <li><a href="home.html">Home</a></li>
+            <li><a href="#">Home</a></li>
             <li><a id="aboutuslink" href="about.html">About</a></li>
-            <li><a href="http://open-notify.org/" target="_blank">API Docs</a> </li>
-            <li><a href="https://github.com/Wixieyy/ISSPositionWeb" target="_blank">Source Code</a></li>
+            <li><a id="apidocslink" href="http://open-notify.org/" target="_blank">API Docs</a> </li>
+            <li><a id="sourcecodelink" href="https://github.com/Wixieyy/ISSPositionWeb" target="_blank">Source Code</a></li>
         </ul>
     </div>
 </header>
@@ -52,7 +53,7 @@
         <div class="map-box">
             <h1 id="map-title">Map</h1>
             <div class="map-image">
-                <img id="earth-map" src="img/NE1_HR_LC_SR_W_DRcompressed.jpg" alt="map">
+                <img id="earth-map" src="img/Equirectangular.jpg" alt="map">
             </div>
         </div>
     </div>

@@ -2,8 +2,8 @@
     user-select: none;
 }
 .navbar {
-    animation-name: fadein;
-    animation-duration: 500ms;
+    /*animation-name: fadein;*/
+    /*animation-duration: 500ms;*/
 }
 
 .center-box {
