@@ -1,12 +1,12 @@
-obj = new Date();
+obj = new Date()
 // Set dot position
 function setDotPosition(latitude, longitude) {
-    const imageWidth = document.getElementById('earth-map').offsetWidth;
-    const imageHeight = document.getElementById('earth-map').offsetHeight;
+    const imageWidth = document.getElementById('earth-map').offsetWidth
+    const imageHeight = document.getElementById('earth-map').offsetHeight
 
-    const dot = document.getElementById('dot');
-    dot.style.left = `${(longitude + 335) * (imageWidth / 360)}px`;
-    dot.style.top = `${(148 - latitude) * (imageHeight / 180)}px`;
+    const dot = document.getElementById('dot')
+    dot.style.left = `${(longitude + 335) * (imageWidth / 360)}px`
+    dot.style.top = `${(148 - latitude) * (imageHeight / 180)}px`
 
     document.getElementById("currentdate").textContent = `Current date & time: ${obj.getDate()}-${obj.getMonth()}-${obj.getFullYear()}`
 }
@@ -14,32 +14,36 @@ function setDotPosition(latitude, longitude) {
 // Fetch data from API
 async function fetchData() {
     try {
-        const response = await fetch('http://api.open-notify.org/iss-now.json');
+        const response = await fetch('https://api.wheretheiss.at/v1/satellites/25544')
         if (!response.ok) {
-            throw new Error("Could not fetch data");
+            throw new Error("Could not fetch data")
         }
-        const data = await response.json();
+        const data = await response.json()
 
-        const latitude = parseFloat(data.iss_position.latitude);
-        const longitude = parseFloat(data.iss_position.longitude);
+        const latitude = parseFloat(data.latitude)
+        const longitude = parseFloat(data.longitude)
+        const altitude = parseFloat(data.altitude)
+        const velocity = parseFloat(data.velocity)
 
-        document.getElementById("latitude").textContent = `${Math.abs(latitude).toFixed(2)} ° ${latitude < 0 ? 'South' : 'North'}`;
-        document.getElementById("longitude").textContent = `${Math.abs(longitude).toFixed(2)} ° ${longitude < 0 ? 'West' : 'East'}`;
+        document.getElementById("latitude").textContent = `${Math.abs(latitude).toFixed(2)} ° ${latitude < 0 ? 'South' : 'North'}`
+        document.getElementById("longitude").textContent = `${Math.abs(longitude).toFixed(2)} ° ${longitude < 0 ? 'West' : 'East'}`
+        document.getElementById('altitude').textContent = `${altitude.toFixed(1)} km`
+        document.getElementById('velocity').textContent = `${(velocity / 3.6).toFixed(1)} m/s`
 
-        setDotPosition(latitude, longitude);
+        setDotPosition(latitude, longitude)
     } catch (error) {
-        console.error(error);
+        console.error(error)
     }
 }
 
 // Wait for the page content and images to fully load before executing the code
 window.addEventListener('load', function() {
     // Fetch data initially
-    fetchData();
+    fetchData()
 
     // Set interval to fetch data periodically
-    setInterval(fetchData, 3000); // Fetch data every 3 seconds
-});
+    setInterval(fetchData, 3000) // Fetch data every 3 seconds
+})
 
 
 if (obj.getHours() > 18 || obj.getHours() < 7) {
