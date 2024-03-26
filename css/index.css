@@ -43,7 +43,7 @@
     user-select: none;
 }
 body {
-    background-image: url("img/ISS_spaceBlurred.jpg");
+    background-image: url("../img/ISS_spaceBlurred.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;

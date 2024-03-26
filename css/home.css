@@ -1,5 +1,6 @@
 * {
     user-select: none;
+    font-family: Merriweather, sans-serif;
 }
 .navbar {
     /*animation-name: fadein;*/
@@ -26,12 +27,12 @@
     height: 98%;
     border-radius: 20px;
 }
-#info-title {
+#info-title,#astroinfo-title {
     text-align: center;
     font-weight: bold;
     margin: 30px 0 0 0;
 }
-#position-title {
+#position-title, #astronauts-title {
     margin-left: 20px;
     max-width: 42%;
     display: inline-block;
@@ -77,14 +78,32 @@
     border: 5px solid gray;
     border-radius: 10px;
 }
-
 #dot {
     position: absolute;
     width: 5px;
     height: 5px;
-    background-color: red; /* Adjust color as needed */
-    border-radius: 50%; /* To make it a circle */
+    background-color: red;
+    border-radius: 50%;
 }
+
+.astro {
+    font-weight: lighter;
+    font-size: 32px;
+}
+#astronauts-title ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    width: 500px;
+}
+#astronauts-title ul li h2 {
+    margin: 0;
+}
+#astronauts-title ul li img {
+    margin-right: 10px;
+    height: 20px;
+}
+
 
 
 .fade-out {

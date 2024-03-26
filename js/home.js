@@ -40,6 +40,7 @@ async function fetchData() {
 window.addEventListener('load', function() {
     // Fetch data initially
     fetchData()
+    fetchAstronautData()
 
     // Set interval to fetch data periodically
     setInterval(fetchData, 3000) // Fetch data every 3 seconds
@@ -51,4 +52,20 @@ if (obj.getHours() > 18 || obj.getHours() < 7) {
 }
 else {
     document.getElementById("earth-map").src = "img/Equirectangular.jpg"
+}
+
+async function fetchAstronautData() {
+    try {
+        const response = await fetch('https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json')
+        if (!response.ok) {
+            throw new Error("Could not fetch astronaut data")
+        }
+        const data = await response.json()
+
+        const astronaut = Number(data.number)
+        console.log(astronaut)
+    }
+    catch (error) {
+        console.error(error)
+    }
 }
