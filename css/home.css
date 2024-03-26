@@ -32,7 +32,7 @@
     font-weight: bold;
     margin: 30px 0 0 0;
 }
-#position-title, #astronauts-title {
+#position-title {
     margin-left: 20px;
     max-width: 42%;
     display: inline-block;
@@ -88,20 +88,19 @@
 
 .astro {
     font-weight: lighter;
-    font-size: 32px;
+}
+#astronauts-title {
+    margin-top: 300px;
 }
 #astronauts-title ul li {
-    display: flex;
+    display: none;
+    font-size: 26px;
+    font-weight: lighter;
     align-items: center;
-    margin-bottom: 0;
     width: 500px;
 }
 #astronauts-title ul li h2 {
     margin: 0;
-}
-#astronauts-title ul li img {
-    margin-right: 10px;
-    height: 20px;
 }
 
 

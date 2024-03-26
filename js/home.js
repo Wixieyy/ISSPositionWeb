@@ -56,16 +56,23 @@ else {
 
 async function fetchAstronautData() {
     try {
-        const response = await fetch('https://corquaid.github.io/international-space-station-APIs/JSON/people-in-space.json')
+        const response = await fetch('https://api.allorigins.win/get?url=http://api.open-notify.org/astros.json')
         if (!response.ok) {
             throw new Error("Could not fetch astronaut data")
         }
-        const data = await response.json()
+        const result = await response.json();
+        const data = JSON.parse(result.contents);
 
-        const astronaut = Number(data.number)
-        console.log(astronaut)
+        const astronauts = data.people.map(person => person.name);
+
+        for (let x = 1; x <= astronauts.length; x++) {
+            document.getElementById('astroinfo-title').textContent = `There are ${astronauts.length} people on the ISS`
+            document.getElementById(`li${x}`).textContent = astronauts[x-1]
+            document.getElementById(`li${x}`).style.display = 'flex'
+        }
     }
     catch (error) {
         console.error(error)
     }
 }
+
