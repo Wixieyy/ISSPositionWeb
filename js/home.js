@@ -1,45 +1,50 @@
-document.getElementById("aboutuslink").addEventListener("click", function(event) {
-    // Prevent the default behavior of the hyperlink
-    event.preventDefault();
+obj = new Date();
+// Set dot position
+function setDotPosition(latitude, longitude) {
+    const imageWidth = document.getElementById('earth-map').offsetWidth;
+    const imageHeight = document.getElementById('earth-map').offsetHeight;
 
-    // Add fade-out class to trigger the animation
-    document.querySelector('.center-box').classList.add('fade-out');
+    const dot = document.getElementById('dot');
+    dot.style.left = `${(longitude + 335) * (imageWidth / 360)}px`;
+    dot.style.top = `${(148 - latitude) * (imageHeight / 180)}px`;
 
-    // Delay before navigating to the URL
-    setTimeout(function () {
-        // Get the URL from the href attribute
-        var url = document.getElementById("aboutuslink").getAttribute("href");
-
-        // Navigate to the URL
-        window.location.href = url;
-    }, 250); // Adjust the delay time (in milliseconds) to match the duration of the animation
-})
-
-for (let x = 0; x < 9999; x++) {
-    setTimeout(fetchData, 3000 * x)
+    document.getElementById("currentdate").textContent = `Current date & time: ${obj.getDate()}-${obj.getMonth()}-${obj.getFullYear()}`
 }
+
+// Fetch data from API
 async function fetchData() {
     try {
-        const longitudeText = document.getElementById("longitude")
-        const latitudeText = document.getElementById("latitude")
-        const response = await fetch('http://api.open-notify.org/iss-now.json')
-
+        const response = await fetch('http://api.open-notify.org/iss-now.json');
         if (!response.ok) {
-            throw new error("could not fetch")
+            throw new Error("Could not fetch data");
         }
-        const data = await response.json()
-        if (data.iss_position.longitude < 180) {
-            longitudeText.textContent = Math.abs(Number(data.iss_position.longitude).toFixed(2)) + " ° East"
-        } else {
-            longitudeText.textContent = Number(data.iss_position.longitude).toFixed(2) + " ° West"
-        }
-        if (data.iss_position.latitude < 180) {
-            latitudeText.textContent = Math.abs(Number(data.iss_position.latitude).toFixed(2)) + " ° North"
-        } else {
-            latitudeText.textContent = Number(data.iss_position.latitude).toFixed(2) + " ° South"
-        }
+        const data = await response.json();
+
+        const latitude = parseFloat(data.iss_position.latitude);
+        const longitude = parseFloat(data.iss_position.longitude);
+
+        document.getElementById("latitude").textContent = `${Math.abs(latitude).toFixed(2)} ° ${latitude < 0 ? 'South' : 'North'}`;
+        document.getElementById("longitude").textContent = `${Math.abs(longitude).toFixed(2)} ° ${longitude < 0 ? 'West' : 'East'}`;
+
+        setDotPosition(latitude, longitude);
+    } catch (error) {
+        console.error(error);
     }
-    catch (error) {
-        console.error(error)
-    }
+}
+
+// Wait for the page content and images to fully load before executing the code
+window.addEventListener('load', function() {
+    // Fetch data initially
+    fetchData();
+
+    // Set interval to fetch data periodically
+    setInterval(fetchData, 3000); // Fetch data every 3 seconds
+});
+
+
+if (obj.getHours() > 18 || obj.getHours() < 7) {
+    document.getElementById("earth-map").src = "img/Equirectangular-night.jpg"
+}
+else {
+    document.getElementById("earth-map").src = "img/Equirectangular.jpg"
 }

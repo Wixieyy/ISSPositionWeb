@@ -33,3 +33,9 @@ document.getElementById("sourcecodelink").addEventListener("click", function(eve
         window.location.href = url;
     }, 250); // Adjust the delay time (in milliseconds) to match the duration of the animation
 });
+
+// remove faded out effect if person uses go back button to go back to same page
+if (document.querySelector('.center-box').classList.contains('fade-out')) {
+    document.querySelector('.center-box').classList.remove('fade-out');
+    document.querySelector('.navbar').classList.remove('fade-out');
+}

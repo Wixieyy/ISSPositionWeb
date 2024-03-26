@@ -51,6 +51,9 @@
     font-weight: lighter;
     text-align: left;
 }
+#latitude, #longitude {
+    user-select: text;
+}
 
 .map-box {
     background-color: rgba(35, 35, 35, 0.1);
@@ -73,6 +76,14 @@
     max-width: 1300px;
     border: 5px solid gray;
     border-radius: 10px;
+}
+
+#dot {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: red; /* Adjust color as needed */
+    border-radius: 50%; /* To make it a circle */
 }
 
 
